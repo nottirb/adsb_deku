@@ -46,13 +46,6 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Start analysis for fast_float
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.FAST_FLOAT_MAYHEMFILE }}
-          sarif-output: sarif
-
       - name: Start analysis for fuzz_target_1
         uses: ForAllSecure/mcode-action@v1
         with:
