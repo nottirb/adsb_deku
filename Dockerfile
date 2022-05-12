@@ -17,4 +17,4 @@ RUN cd libadsb_deku && ${HOME}/.cargo/bin/cargo build && ${HOME}/.cargo/bin/carg
 # Package Stage
 FROM ubuntu:20.04
 
-COPY --from=builder adsb_deku/libadsb_deku/fuzz/target/x86_64-unknown-linux-gnu/release/* /
+COPY --from=builder adsb_deku/libadsb_deku/fuzz/target/x86_64-unknown-linux-gnu/release/fuzz_target_1 /
