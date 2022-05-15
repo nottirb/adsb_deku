@@ -1,5 +1,7 @@
-project: adsb_deku
+project: adsb-deku
 target: fuzz_target_1
+
+# image: ghcr.io/nottirb/adsb_deku:latest
 
 cmds:
     - cmd: /fuzz_target_1
