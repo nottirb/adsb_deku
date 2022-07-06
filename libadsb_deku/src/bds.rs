@@ -12,7 +12,7 @@ use deku::prelude::*;
 
 use crate::aircraft_identification_read;
 
-#[derive(Debug, PartialEq, DekuRead, Clone)]
+#[derive(Debug, PartialEq, Eq, DekuRead, Clone)]
 #[deku(type = "u8", bits = "8")]
 pub enum BDS {
     /// (1, 0) Table A-2-16
@@ -53,12 +53,11 @@ impl fmt::Display for BDS {
 }
 
 /// To report the data link capability of the Mode S transponder/data link installation
-#[derive(Debug, PartialEq, DekuRead, Clone)]
+#[derive(Debug, PartialEq, Eq, DekuRead, Clone)]
 pub struct DataLinkCapability {
     #[deku(bits = "1")]
+    #[deku(pad_bits_after = "5")] // reserved
     pub continuation_flag: bool,
-    #[deku(bits = "5")]
-    pub reserved0: u8,
     #[deku(bits = "1")]
     pub overlay_command_capability: bool,
     #[deku(bits = "1")]
