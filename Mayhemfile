@@ -1,7 +1,7 @@
 project: adsb-deku
-target: fuzz_target_1
+target: frame_from_bytes
 
 # image: ghcr.io/nottirb/adsb_deku:latest
 
 cmds:
-    - cmd: /fuzz_target_1
+    - cmd: /frame_from_bytes
